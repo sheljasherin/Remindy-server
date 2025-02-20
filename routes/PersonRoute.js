@@ -3,7 +3,7 @@ const { User, validate } = require("../models/Person");
 const bcrypt = require("bcrypt");
 const router = express.Router();
 
-// ➤ POST: Create a new user
+
 router.post("/", async (req, res) => {
     try {
         // Validate request data
@@ -36,7 +36,7 @@ router.post("/", async (req, res) => {
     }
 });
 
-// ➤ GET: Retrieve all users
+
 router.get("/", async (req, res) => {
     try {
         const users = await User.find().select("-password"); // Exclude password from response
